@@ -1,11 +1,8 @@
 import './App.css'
 
 function App() {
-
   return (
-    <>
-      <div>トップページ</div>
-    </>
+    <div className="text-3xl font-bold underline">トップページ</div>
   )
 }
 
