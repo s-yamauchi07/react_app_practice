@@ -1,5 +1,6 @@
 import { posts } from './data/posts';
 import parse from 'html-react-parser';
+import { Link } from 'react-router-dom';
 
 const Top = () => {
   const ChangeDateFormat = (date) => date.substring(0, date.indexOf("T")).replace(/-/g, "/");
@@ -10,7 +11,7 @@ const Top = () => {
         <ul className="mx-auto max-w-3xl flex flex-col gap-8">
             {posts.map((post) => {
               return(
-                <a key={post.id} href={`/detail/${post.id}`}>
+                <Link key={post.id} to={`/detail/${post.id}`}>
                   <li key={post.id} className="p-4 border border-solid border-gray-400">
                     <div className="flex justify-between">
                       <p className="text-gray-500 text-xs">{ChangeDateFormat(post.createdAt)}</p>
@@ -31,7 +32,7 @@ const Top = () => {
                       {parse(post.content)}
                     </div>
                   </li>
-                </a>
+                </Link>
               )
             })}
         </ul>
