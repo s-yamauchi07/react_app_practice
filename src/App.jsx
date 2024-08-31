@@ -1,8 +1,13 @@
 import './App.css'
+import Top from './Top'
+import Header from './Header'
 
-function App() {
+const App = () => {
   return (
-    <div className="text-3xl font-bold underline">トップページ</div>
+    <>
+      <Header />
+      <Top />
+    </>
   )
 }
 
