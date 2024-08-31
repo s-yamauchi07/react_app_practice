@@ -16,7 +16,9 @@ const Top = () => {
                     <div className="flex">
                       {post.categories.map((category) => {
                         return(
-                          <span key={category} className="py-1 px-2 mr-2 text-blue-600 border border-solid border-blue-600 rounded text-xs">{category}</span>
+                          <span key={category} className="py-1 px-2 mr-2 text-blue-600 border border-solid border-blue-600 rounded text-xs">
+                            {category}
+                          </span>
                         )
                       })}
                     </div>
