@@ -7,16 +7,16 @@ const Top = () => {
   return(
     <>
       <div className="m-10">
-        <ul className="mx-auto max-w-3xl">
+        <ul className="mx-auto max-w-3xl flex flex-col gap-8">
             {posts.map((post) => {
               return(
-                <li key={post.id} className="p-4 mb-8 border border-solid border-gray-400">
+                <li key={post.id} className="p-4 border border-solid border-gray-400">
                   <div className="flex justify-between">
                     <p className="text-gray-500 text-xs">{ChangeDateFormat(post.createdAt)}</p>
-                    <div className="flex">
+                    <div className="flex gap-2">
                       {post.categories.map((category) => {
                         return(
-                          <span key={category} className="py-1 px-2 mr-2 text-blue-600 border border-solid border-blue-600 rounded text-xs">
+                          <span key={category} className="py-1 px-2 text-blue-600 border border-solid border-blue-600 rounded text-xs">
                             {category}
                           </span>
                         )
