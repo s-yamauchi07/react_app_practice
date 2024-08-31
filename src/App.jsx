@@ -5,8 +5,8 @@ import Header from './Header'
 const App = () => {
   return (
     <>
-    <Header />
-    <Top />
+      <Header />
+      <Top />
     </>
   )
 }
