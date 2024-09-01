@@ -5,6 +5,7 @@ import parse from 'html-react-parser';
 const Detail = () => {
   const { id } = useParams();
   const post = posts.find(post => post.id == id);
+  if (!post) return <div className='pt-6 text-center'>記事が見当たりません</div>;
   const ChangeDateFormat = (date) => date.substring(0, date.indexOf("T")).replace(/-/g, "/");
 
   return(
