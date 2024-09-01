@@ -1,12 +1,24 @@
+import { createBrowserRouter, createRoutesFromElements, Route, RouterProvider } from "react-router-dom";
+import Top from './Top';
+import Header from './Header';
+import Detail from './Detail';
 import './App.css'
-import Top from './Top'
-import Header from './Header'
+
+const routes = createBrowserRouter(
+  createRoutesFromElements(
+    <>
+      <Route path="/" element={<Top />}/>
+      <Route path="/detail/:id" element={<Detail />}/>
+    </>
+  )
+)
+
 
 const App = () => {
   return (
     <>
       <Header />
-      <Top />
+      <RouterProvider router={routes} />
     </>
   )
 }
