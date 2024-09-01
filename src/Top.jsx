@@ -1,8 +1,18 @@
-import { posts } from './data/posts';
 import parse from 'html-react-parser';
 import { Link } from 'react-router-dom';
+import { useEffect, useState } from 'react';
 
 const Top = () => {
+  const [posts, setPosts] = useState([]);
+
+  useEffect(()=> {
+    const allPosts = async() => {
+      const response = await fetch("https://1hmfpsvto6.execute-api.ap-northeast-1.amazonaws.com/dev/posts");
+      const data = await response.json();
+      setPosts(data.posts)
+    }
+    allPosts();
+  }, []);
   const ChangeDateFormat = (date) => date.substring(0, date.indexOf("T")).replace(/-/g, "/");
 
   return(
