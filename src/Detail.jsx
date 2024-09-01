@@ -1,10 +1,21 @@
 import { useParams } from 'react-router-dom';
-import { posts } from './data/posts';
+import { useState } from 'react';
 import parse from 'html-react-parser';
+import { useEffect } from 'react';
 
 const Detail = () => {
   const { id } = useParams();
-  const post = posts.find(post => post.id == id);
+  const [post, setPost] = useState();
+  
+  useEffect(() => {
+    const fetchPost = async() => {
+      const response = await fetch(`https://1hmfpsvto6.execute-api.ap-northeast-1.amazonaws.com/dev/posts/${id}`);
+      const data = await response.json();
+      setPost(data.post)
+    }
+    fetchPost();
+  }, []);
+  
   if (!post) return <div className='pt-6 text-center'>記事が見当たりません</div>;
   const ChangeDateFormat = (date) => date.substring(0, date.indexOf("T")).replace(/-/g, "/");
 
