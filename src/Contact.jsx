@@ -81,8 +81,8 @@ const Contact = () => {
       </div>
       <div className="flex items-center justify-center mt-10">
         <button type="submit"
-            disabled={isSubmitting}
-            className="bg-gray-800 text-white font-bold py-2 px-4 rounded-lg mr-4">送信</button>
+          disabled={isSubmitting}
+          className="bg-gray-800 text-white font-bold py-2 px-4 rounded-lg mr-4">送信</button>
         <button 
           onClick={handleReset}
           type="button"
