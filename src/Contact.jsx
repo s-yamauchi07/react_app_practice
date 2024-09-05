@@ -29,6 +29,7 @@ const Contact = () => {
             <input type="text" 
               id="name"
               name="name"
+              disabled={isSubmitting}
               className="border border-1 border-gray-300 rounded-lg py-4 px-4 w-full"
               {...register("name",{
                 required: "お名前は必須です。",
@@ -46,6 +47,7 @@ const Contact = () => {
             <input type="text"
               id="email"
               name="email"
+              disabled={isSubmitting}
               className="border border-1 border-gray-200 rounded-lg py-4 px-4 w-full"
               {...register("email", {
                 required: "メールアドレスは必須です。",
@@ -63,6 +65,7 @@ const Contact = () => {
           <div className="w-full">
             <textarea id="message"
               name="message"
+              disabled={isSubmitting}
               className="border border-1 border-gray-200 rounded-lg py-4 px-4 w-full h-56" 
               {...register("message", {
                 required: "本文は必須です。",
