@@ -2,6 +2,7 @@ import { createBrowserRouter, createRoutesFromElements, Route, RouterProvider } 
 import Top from './Top';
 import Header from './Header';
 import Detail from './Detail';
+import Contact from './Contact';
 import './App.css'
 
 const routes = createBrowserRouter(
@@ -9,6 +10,7 @@ const routes = createBrowserRouter(
     <>
       <Route path="/" element={<Top />}/>
       <Route path="/detail/:id" element={<Detail />}/>
+      <Route path="/contact" element={<Contact />}/>
     </>
   )
 )
